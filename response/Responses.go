@@ -1,7 +1,9 @@
-package models
+package response
 
 type MenuResponses struct {
-	Menu []DetailResponses `json:"menu"`
+	Menu     []DetailResponses `json:"menu"`
+	Populars []PopularManga    `json:"populars"`
+	Latest   []LatesUpdate     `json:"latest"`
 }
 
 type DetailResponses struct {
@@ -36,4 +38,7 @@ type PopularManga struct {
 	Endpoint    string            `json:"endpoint"`
 	LastUpload  string            `json:"last_upload"`
 	LastChapter []DetailResponses `json:"last_chapter"`
+}
+
+type SearchResponses struct {
 }
