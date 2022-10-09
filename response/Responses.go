@@ -10,6 +10,13 @@ type DetailResponses struct {
 	Endpoint string `json:"endpoint"`
 }
 
+type LatesUpdate struct {
+	Name      string `json:"name"`
+	Url       string `json:"url"`
+	Endpoint  string `json:"endpoint"`
+	Thumbnail string `json:"thumbnail"`
+}
+
 type ListManga struct {
 	Name      string `json:"name"`
 	Thumbnail string `json:"thumbnail"`
