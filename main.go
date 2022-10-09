@@ -22,10 +22,8 @@ func InitRoute() *gin.Engine {
 	router.Use(cors.Default())
 	RouteApi := router.Group("/api")
 	routes.Routes(RouteApi)
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
+	router.NoRoute(func(c *gin.Context) {
+		c.JSON(404, gin.H{"message": "Not found"})
 	})
 	return router
 }
