@@ -1,1 +1,1 @@
-web: baca-manga
+web:go run main.go
