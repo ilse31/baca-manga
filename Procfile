@@ -1,1 +1,1 @@
-web: ./baca-manga -e development
+web: baca-manga
