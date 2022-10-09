@@ -1,1 +1,1 @@
-web: ./go-gin-boilerplate -e development
+web: ./baca-manga -e development
