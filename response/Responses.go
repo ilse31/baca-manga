@@ -41,4 +41,6 @@ type PopularManga struct {
 }
 
 type SearchResponses struct {
+	Manga      []ListManga       `json:"manga"`
+	Pagination []DetailResponses `json:"pagination"`
 }

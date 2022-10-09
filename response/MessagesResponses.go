@@ -11,6 +11,7 @@ type Success struct {
 }
 
 type PingSuccess struct {
-	Message string `json:"message"`
-	Status  string `json:"status"`
+	Status     string `json:"status"`
+	Message    string `json:"message"`
+	StatusCode int    `json:"statusCode"`
 }
