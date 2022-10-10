@@ -1,1 +1,1 @@
-web:baca-manga
+web: bin/baca-mangaa
