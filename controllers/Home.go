@@ -66,6 +66,19 @@ func Home(c *gin.Context) {
 		})
 	})
 
+	data.Find(".latestupdate-v2").Find(".animepost").Each(func(i int, s *goquery.Selection) {
+		name := s.Find("[itemprop='url']").AttrOr("title", "No title")
+		thumnail := strings.Split(s.Find("img").AttrOr("src", "No src"), "?")[0]
+		url := s.Find("[itemprop='url']").AttrOr("href", "No url")
+		endpoint := strings.Replace(url, "http://komikindo.id/", "", -1)
+
+		HomeResp.Latest = append(HomeResp.Latest, responses.LatesUpdate{
+			Name:      name,
+			Thumbnail: strings.Replace(thumnail, "https://", "https://cdn.statically.io/img/", -1),
+			Url:       url,
+			Endpoint:  endpoint,
+		})
+	})
 	defer resp.Body.Close()
 
 	c.JSON(200, responses.Success{
