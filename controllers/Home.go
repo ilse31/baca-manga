@@ -17,8 +17,9 @@ func Home(c *gin.Context) {
 	resp := Api.Get("http://komikindo.id/")
 	if resp.StatusCode != 200 {
 		c.JSON(500, responses.Error{
-			Status:  "error",
-			Message: "Something went wrong",
+			Status:     "error",
+			Message:    "Something went wrong",
+			StatusCode: resp.StatusCode,
 		})
 		return
 	}
@@ -26,8 +27,9 @@ func Home(c *gin.Context) {
 	data, errs := goquery.NewDocumentFromReader(resp.Body)
 	if errs != nil {
 		c.JSON(500, responses.Error{
-			Status:  "error",
-			Message: errs.Error(),
+			Status:     "error",
+			Message:    errs.Error(),
+			StatusCode: resp.StatusCode,
 		})
 		return
 	}
