@@ -20,6 +20,7 @@ func Home(c *gin.Context) {
 			Status:  "error",
 			Message: "Something went wrong",
 		})
+		return
 	}
 
 	data, errs := goquery.NewDocumentFromReader(resp.Body)
@@ -28,6 +29,7 @@ func Home(c *gin.Context) {
 			Status:  "error",
 			Message: errs.Error(),
 		})
+		return
 	}
 	data.Find("#menu-second-menu").Children().Each(func(i int, s *goquery.Selection) {
 		name := s.Find("a").Text()
