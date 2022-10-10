@@ -14,7 +14,7 @@ func Home(c *gin.Context) {
 
 	var HomeResp responses.MenuResponses
 
-	resp, _ := Api.Get("http://komikindo.id/")
+	resp := Api.Get("http://komikindo.id/")
 	if resp.StatusCode != 200 {
 		c.JSON(500, responses.Error{
 			Status:  "error",
