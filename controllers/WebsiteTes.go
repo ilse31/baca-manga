@@ -8,13 +8,14 @@ import (
 )
 
 func Ping(c *gin.Context) {
-	resp, _ := Api.Get("http://komikindo.id/")
+	resp := Api.Get("http://komikindo.id/")
 	if resp.StatusCode != 200 {
 		c.JSON(500, gin.H{
 			"status":  "error",
 			"message": "Something went wrong",
 		})
 	}
+
 	defer resp.Body.Close()
 
 	c.JSON(200, responses.PingSuccess{
