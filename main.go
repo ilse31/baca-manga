@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 
 	routes "baca-manga/routes"
 
@@ -10,8 +11,12 @@ import (
 )
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
 	router := InitRoute()
-	log.Fatal(router.Run(":8080"))
+	log.Fatal(router.Run(":" + port))
 }
 
 func InitRoute() *gin.Engine {
