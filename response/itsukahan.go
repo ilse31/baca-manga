@@ -1,3 +1,5 @@
+package response
+
 type ItsukaHandoko struct {
 	Status     string `json:"status"`
 	Message    string `json:"message"`
