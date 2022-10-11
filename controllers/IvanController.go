@@ -20,7 +20,7 @@ func Ivan(c *gin.Context) {
 
 	defer resp.Body.Close()
 
-	c.JSON(200, responses.Ivan{
+	c.JSON(200, responses.IvanError{
 		Status:     "success",
 		Message:    "Website is up",
 		StatusCode: resp.StatusCode,
