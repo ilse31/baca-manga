@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func ControllerIvan(c *gin.Context) {
+func ControllerHandoko(c *gin.Context) {
 	resp := Api.Get("https://hentaihaven.xxx/")
 	if resp.StatusCode != 200 {
 		c.JSON(500, gin.H{
