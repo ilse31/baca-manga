@@ -2,8 +2,8 @@ package main
 
 import (
 	"log"
-	"os"
 
+	"baca-manga/helpers"
 	routes "baca-manga/routes"
 
 	"github.com/gin-contrib/cors"
@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	port := os.Getenv("PORT")
+	port := helpers.GetKeyEnv("PORT")
 	if port == "" {
 		port = "8080"
 	}
@@ -23,7 +23,6 @@ func InitRoute() *gin.Engine {
 	router := gin.Default()
 
 	router.Use(gin.Logger())
-	router.Use(gin.Recovery())
 	router.Use(cors.Default())
 	RouteApi := router.Group("/api")
 	routes.Routes(RouteApi)
