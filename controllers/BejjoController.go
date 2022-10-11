@@ -43,6 +43,8 @@ func BejjoController(c *gin.Context) {
 			Attack:     td.Eq(5).Text(),
 			Defense:     td.Eq(6).Text(),
 			Speed:     td.Eq(9).Text(),
+			SpAttack:     td.Eq(7).Text(),
+			SpDefense:     td.Eq(8).Text(),
 		})
 	})
 
