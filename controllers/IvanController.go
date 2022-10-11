@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Ivan(c *gin.Context) {
+func ControllerIvan(c *gin.Context) {
 	resp := Api.Get("http://komikindo.id/")
 	if resp.StatusCode != 200 {
 		c.JSON(500, gin.H{
