@@ -11,8 +11,9 @@ func Ping(c *gin.Context) {
 	resp := Api.Get("http://komikindo.id/")
 	if resp.StatusCode != 200 {
 		c.JSON(500, gin.H{
-			"status":  "error",
-			"message": "Something went wrong",
+			"status":      "error",
+			"message":     "Something went wrong",
+			"status_code": resp.StatusCode,
 		})
 		return
 	}
