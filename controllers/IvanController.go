@@ -20,9 +20,9 @@ func ControllerIvan(c *gin.Context) {
 
 	defer resp.Body.Close()
 
-	c.JSON(200, responses.IvanError{
-		Status:     "success",
-		Message:    "Website is up",
+	c.JSON(404, responses.IvanError{
+		Status:     "error",
+		Message:    "something missing",
 		StatusCode: resp.StatusCode,
 	})
 
