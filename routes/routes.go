@@ -9,4 +9,5 @@ import (
 func Routes(router *gin.RouterGroup) {
 	router.GET("/ping", controllers.Ping)
 	router.GET("/home", controllers.Home)
+	router.GET("/ivan", controllers.ControllerIvan)
 }
