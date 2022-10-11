@@ -8,6 +8,8 @@ type Pokedex struct {
 	Attack	   string    	`json:"attack"`
 	Defense	   string    	`json:"defense"`
 	Speed      string          `json:"speed"`
+	SpAttack      string          `json:"spattack"`
+	SpDefense      string          `json:"spdefense"`
 }
 
 type PokedexList struct {
