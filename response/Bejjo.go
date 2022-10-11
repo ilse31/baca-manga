@@ -1,12 +1,15 @@
 package response
 
 type Pokedex struct {
-	Id     	   int          `json:"id"`
+	Id     	   string          `json:"id"`
 	Name       string       `json:"name"`
-	Total	   int		`json:"total"`
-	HP 	   int    	`json:"hp"`
-	Attack	   int    	`json:"attack"`
-	Defense	   int    	`json:"defense"`
-	Speed      int          `json:"speed"`
-	Images     []string 	`json:"images"`
+	Total	   string		`json:"total"`
+	HP 	   string    	`json:"hp"`
+	Attack	   string    	`json:"attack"`
+	Defense	   string    	`json:"defense"`
+	Speed      string          `json:"speed"`
+}
+
+type PokedexList struct {
+	List     []Pokedex `json:"list"`
 }
