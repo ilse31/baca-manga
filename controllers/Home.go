@@ -14,7 +14,7 @@ func Home(c *gin.Context) {
 
 	var HomeResp responses.MenuResponses
 
-	resp := helpers.Get(helpers.GetKeyEnv("BASE_URL"))
+	resp := helpers.Get("https://komikindo.id/")
 	if resp.StatusCode != 200 {
 		c.JSON(500, responses.Error{
 			Status:     "error",
