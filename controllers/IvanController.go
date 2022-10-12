@@ -26,10 +26,4 @@ func ControllerIvan(c *gin.Context) {
 		StatusCode: resp.StatusCode,
 	})
 
-	// c.JSON(200, responses.IvanSuccess{
-	// 	Status:     "success",
-	// 	Message:    "website is up",
-	// 	StatusCode: resp.StatusCode,
-	// })
-
 }
