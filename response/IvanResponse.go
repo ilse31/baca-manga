@@ -17,7 +17,7 @@ type PingIvanSuccess struct {
 	StatusCode int    `json:"statusCode"`
 }
 
-type Pokedex struct {
+type IvanPokedex struct {
 	Id     	   string          `json:"id"`
 	Name       string       `json:"name"`
 	Total	   string		`json:"total"`
