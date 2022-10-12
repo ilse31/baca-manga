@@ -27,8 +27,8 @@ func ControllerIvan(c *gin.Context) {
 	})
 
 	c.JSON(200, responses.IvanSuccess{
-		Status:     "error",
-		Message:    "something missing",
+		Status:     "success",
+		Message:    "website is up",
 		StatusCode: resp.StatusCode,
 	})
 
