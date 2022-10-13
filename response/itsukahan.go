@@ -6,4 +6,3 @@ type ItsukaHandoko struct {
 	StatusCode int    `json:"statusCode"`
 	Nama       string `json:"nama"`
 }
-
