@@ -1,8 +1,8 @@
 package response
 
-type Enricozd struct {
+type enricozd struct {
 	Status     string `json:"status"`
 	Message    string `json:"message"`
-	StatusCode int    `json:"statusCode"`
+	StatusCode string `json:"statusCode"`
 	Nama       string `json:"nama"`
 }
