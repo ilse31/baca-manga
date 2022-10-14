@@ -12,4 +12,5 @@ func Routes(router *gin.RouterGroup) {
 	router.GET("/ivan", controllers.ControllerIvan)
 	router.GET("/pokedex", controllers.BejjoController)
 	router.GET("/enzd", controllers.EnzdController)
+	router.GET("/wagyuA5", controllers.WagyuController)
 }
