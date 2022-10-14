@@ -36,15 +36,15 @@ func BejjoController(c *gin.Context) {
 	data.Find("#pokedex").Find("tr").Each(func(i int, s *goquery.Selection) {
 		td := s.Find("td")
 		PokeRes.List = append(PokeRes.List, responses.Pokedex{
-			Id:     td.Eq(0).Text(),
-			Name:     td.Eq(1).Text(),
+			Id:        td.Eq(0).Text(),
+			Name:      td.Eq(1).Text(),
 			Total:     td.Eq(3).Text(),
-			HP:     td.Eq(4).Text(),
-			Attack:     td.Eq(5).Text(),
-			Defense:     td.Eq(6).Text(),
+			HP:        td.Eq(4).Text(),
+			Attack:    td.Eq(5).Text(),
+			Defense:   td.Eq(6).Text(),
 			Speed:     td.Eq(9).Text(),
-			SpAttack:     td.Eq(7).Text(),
-			SpDefense:     td.Eq(8).Text(),
+			SpAttack:  td.Eq(7).Text(),
+			SpDefense: td.Eq(8).Text(),
 		})
 	})
 
