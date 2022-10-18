@@ -35,7 +35,7 @@ func ListKomik(c *gin.Context) {
 		fmt.Println(errs)
 	}
 
-	data.Find(".daftar-komik").Find("li").Each(func(i int, s *goquery.Selection) {
+	data.Find(".animepost").Find("li").Each(func(i int, s *goquery.Selection) {
 
 		name := s.Find("[itemprop=url]").AttrOr("title", "No Title")
 		thumbnail := strings.Split(s.Find("img").AttrOr("src", "No Image"), "?")[0]
