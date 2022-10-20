@@ -7,7 +7,7 @@ import (
 )
 
 func ControllerKhoeru(c *gin.Context) {
-	resp := Api.Get("https://bacakomik.co/")
+	resp := Api.Get("http://komikindo.id/")
 	if resp.StatusCode != 200 {
 		c.JSON(500, gin.H{
 			"status":      "error",
