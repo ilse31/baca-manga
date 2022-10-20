@@ -15,5 +15,4 @@ func Routes(router *gin.RouterGroup) {
 	router.GET("/ping1", controllers.Ping)
 	router.GET("/enzd", controllers.EnzdController)
 	router.GET("/wagyuA5", controllers.WagyuController)
-	router.GET("/khoeru", controllers.ControllerKhoeru)
 }
