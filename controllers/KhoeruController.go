@@ -12,8 +12,9 @@ func ControllerKhoeru(c *gin.Context) {
 		KhoeruSuccess responses.KhoeruSuccess
 		KhoeruError   responses.KhoeruError
 	)
-	KhoeruSuccess.Message = "Halo! Ini Khoeru"
+	KhoeruSuccess.Message = "Hello Khoeru"
 	KhoeruSuccess.Data = Khoeru
+	KhoeruError.Message = "Sorry, Khoeru is not here"
 	
 	resp := Api.Get("http://komikindo.id/")
 	if resp.StatusCode != 200 {
