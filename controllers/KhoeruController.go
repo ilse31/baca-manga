@@ -7,6 +7,14 @@ import (
 )
 
 func ControllerKhoeru(c *gin.Context) {
+	Khoeru := "Khoeru is Love"
+	var (
+		KhoeruSuccess responses.KhoeruSuccess
+		KhoeruError   responses.KhoeruError
+	)
+	KhoeruSuccess.Message = "Halo! Ini Khoeru"
+	KhoeruSuccess.Data = Khoeru
+	
 	resp := Api.Get("http://komikindo.id/")
 	if resp.StatusCode != 200 {
 		c.JSON(500, gin.H{
