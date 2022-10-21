@@ -6,3 +6,8 @@ type ItsukaHandoko struct {
 	StatusCode int    `json:"statusCode"`
 	Nama       string `json:"nama"`
 }
+
+type ItsukaSuccess struct {
+	Message string      `json:"message"`
+	Data    interface{} `json:"data"`
+}
