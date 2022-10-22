@@ -19,4 +19,6 @@ func Routes(router *gin.RouterGroup) {
 	router.GET("/itsuka", controllers.ControllerHandoko)
 	router.GET("/khoeru", controllers.ControllerKhoeru)
 	router.GET("/Dissleeping", controllers.ControllerDissleeping)
+	router.GET("/Nurul", controllers.NurulController)
+
 }
