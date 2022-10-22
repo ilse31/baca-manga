@@ -7,15 +7,7 @@ import (
 )
 
 func ControllerKhoeru(c *gin.Context) {
-	Khoeru := "Khoeru is Love"
-	var (
-		KhoeruSuccess responses.KhoeruSuccess
-		KhoeruError   responses.KhoeruError
-	)
-	KhoeruSuccess.Message = "Hello Khoeru"
-	KhoeruSuccess.Data = Khoeru
-	KhoeruError.Message = "Sorry, Khoeru is not here"
-	
+	// get api from url
 	resp := Api.Get("http://komikindo.id/")
 	if resp.StatusCode != 200 {
 		c.JSON(500, gin.H{
@@ -26,6 +18,7 @@ func ControllerKhoeru(c *gin.Context) {
 		return
 	}
 
+	// end execute
 	defer resp.Body.Close()
 
 	c.JSON(404, responses.KhoeruError{
