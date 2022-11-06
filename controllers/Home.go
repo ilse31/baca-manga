@@ -36,7 +36,7 @@ func Home(c *gin.Context) {
 	data.Find("#menu-second-menu").Children().Each(func(i int, s *goquery.Selection) {
 		name := s.Find("a").Text()
 		url := s.Find("a").AttrOr("href", "No url")
-		endpoint := strings.Replace(url, helpers.GetKeyEnv("BASE_URL"), "", -1)
+		endpoint := strings.Replace(url, "https://komikindo.id/", "", -1)
 		HomeResp.Menu = append(HomeResp.Menu, responses.DetailResponses{
 			Name:     name,
 			Url:      url,
@@ -47,12 +47,12 @@ func Home(c *gin.Context) {
 		name := s.Find("[itemprop='url']").AttrOr("title", "No title")
 		thumnail := strings.Split(s.Find("img").AttrOr("src", "No src"), "?")[0]
 		url := s.Find("[itemprop='url']").AttrOr("href", "No url")
-		endpoint := strings.Replace(url, helpers.GetKeyEnv("BASE_URL"), "", -1)
+		endpoint := strings.Replace(url, "https://komikindo.id/", "", -1)
 		lastUpload := s.Find(".datech").Text()
 
 		lastChapter := s.Find(".lsch").Find("a").Text()
 		lastChapterUrl := s.Find(".lsch").Find("a").AttrOr("href", "No url")
-		lastChapterEndpoint := strings.Replace(lastChapterUrl, helpers.GetKeyEnv("BASE_URL"), "", -1)
+		lastChapterEndpoint := strings.Replace(lastChapterUrl, "https://komikindo.id/", "", -1)
 
 		HomeResp.Populars = append(HomeResp.Populars, responses.PopularManga{
 			Name:       name,
@@ -74,7 +74,7 @@ func Home(c *gin.Context) {
 		name := s.Find("[itemprop='url']").AttrOr("title", "No title")
 		thumnail := strings.Split(s.Find("img").AttrOr("src", "No src"), "?")[0]
 		url := s.Find("[itemprop='url']").AttrOr("href", "No url")
-		endpoint := strings.Replace(url, helpers.GetKeyEnv("BASE_URL"), "", -1)
+		endpoint := strings.Replace(url, "https://komikindo.id/", "", -1)
 
 		HomeResp.Latest = append(HomeResp.Latest, responses.LatesUpdate{
 			Name:      name,
